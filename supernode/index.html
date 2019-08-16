@@ -8,7 +8,7 @@
 </head>
 <body>
     
-    <h5>piternsNet</h5>
+    <h1>piternsNet</h1>
     <strong>A Simple HTML-5 and Websockets Applicaion</strong>
 
     <script>
@@ -49,6 +49,7 @@
                 try {
                     var res_obj = JSON.parse(res);
                     console.table(res_obj);
+
                 } catch(e) {
                     console.error(e);
                 }
@@ -57,6 +58,31 @@
         
         function onError(evt) {
             console.error(`ERROR: Websocket Connection to ${evt.srcElement.url} returned error.`);
+        }
+
+        function sendMessage(msg='', receiverList=[]) {
+            const sender = localStorage.piternUser; 
+            const receivers = receiverList;
+            const msgObj = {
+                sender, receivers, msg
+            }
+            websocket.send(JSON.stringify(msgObj));
+        }
+
+        function addUser(userName='', addUserValue='') {
+            if(userName.length < 3 || addUserValue < 3) {
+                alert('Please specify a valid username or value.');
+                return;
+            }
+            if (typeof localStorage.userName !== "string") {
+                localStorage[userName] = addUserValue;
+            }
+        }
+
+        function registerMe(addUserValue='') {
+            if (typeof localStorage.userName !== "string") {
+                localStorage['piternUser'] = addUserValue;
+            }
         }
     </script>
 

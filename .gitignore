@@ -1,8 +1,7 @@
-examples.mk
 json-rpc/
 supernode/playground/
 playground
-supernode/test/in
+supernode/test.html
 supernode/test/in/index1.html
 supernode/test/in/index2.html
 supernode/test/in/index3.html
