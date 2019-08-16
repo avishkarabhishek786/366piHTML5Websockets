@@ -1,2 +1,2 @@
-# localbitcoin++
-A decentralized localbitcoin.com type Bitcoin trading platform. 
+# piternsNet
+ A HTML 5 and Websockets Chat App.
